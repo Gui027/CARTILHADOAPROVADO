@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Cartilha do Aprovado na PMES 2026 — Soldado Combatente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   TROQUE ANTES DE PUBLICAR:
+   1. --preco / --preco-de nos textos (procure "R$")
+   2. Todos os href="#checkout" pelo seu link da Hotmart/Kiwify
+   3. Os blocos [DEPOIMENTO REAL] por prints/vídeos verdadeiros
+   4. Os blocos [IMAGEM ...] pelos mockups da sua cartilha
+   5. As credenciais reais de quem criou o material (seção "Quem fez")
+   =========================================================== */
+:root{
+  --navy:#0E1A2B;        /* fundo institucional  */
+  --steel:#16304F;       /* azul secundário      */
+  --gold:#C9A24B;        /* dourado "aprovação"  */
+  --gold-soft:#E7D2A0;
+  --alert:#D6482E;       /* urgência/prova       */
+  --cool:#EEF1F5;        /* claro (seções)       */
+  --cool-2:#E3E8EF;
+  --ink:#10202F;         /* texto escuro         */
+  --muted:#5A6b7d;
+  --white:#ffffff;
+  --line:rgba(255,255,255,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--cool);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Barlow Condensed','Inter',sans-serif;line-height:1.03;text-transform:uppercase;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',monospace}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:680px;margin:0 auto;padding:0 20px}
+
+/* ---------- top bar ---------- */
+.topbar{
+  background:var(--alert);color:#fff;
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  text-transform:uppercase;letter-spacing:.04em;font-size:15px;
+  text-align:center;padding:9px 14px;
+  display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;
+}
+.topbar .safe{opacity:.85;font-size:13px;letter-spacing:.02em}
+.topbar b{background:rgba(0,0,0,.22);padding:1px 7px;border-radius:4px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--navy);color:#fff;position:relative;padding:34px 0 40px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 80% at 80% -10%, rgba(201,162,75,.18), transparent 60%),
+    linear-gradient(180deg,#132540 0%,var(--navy) 70%);
+}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  letter-spacing:.14em;font-size:13px;color:var(--gold);
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;
+}
+.eyebrow::before{content:"›››";color:var(--gold);letter-spacing:-2px}
+.hero h1{font-size:clamp(33px,8vw,52px);font-weight:700;margin-bottom:16px}
+.hero h1 .hl{color:var(--gold)}
+.hero .sub{font-size:17px;color:#C4D0DE;max-width:560px;margin-bottom:22px}
+.mock{
+  background:linear-gradient(135deg,#1c3355,#122740);
+  border:1px solid var(--line);border-radius:14px;
+  aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
+  color:#7d93ad;font-size:14px;text-align:center;padding:20px;margin:6px 0 24px;
+  font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em;
+}
+.priceline{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.priceline .de{color:#8fa2b6;text-decoration:line-through;font-size:18px}
+.priceline .por{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:44px;color:#fff}
+.priceline .por small{font-size:22px;color:var(--gold);vertical-align:top}
+.priceline .tag{background:var(--gold);color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;padding:4px 10px;border-radius:6px;text-transform:uppercase}
+
+/* ---------- CTA button ---------- */
+.cta{
+  display:block;width:100%;text-align:center;text-decoration:none;
+  background:var(--gold);color:var(--navy);
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em;font-size:23px;
+  padding:18px 22px;border-radius:12px;border:none;cursor:pointer;
+  box-shadow:0 10px 26px rgba(201,162,75,.28);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(201,162,75,.4)}
+.cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.cta .small{display:block;font-family:'Inter',sans-serif;font-weight:500;text-transform:none;letter-spacing:0;font-size:13px;opacity:.75;margin-top:3px}
+.delivery{text-align:center;color:#9fb0c2;font-size:14px;margin-top:14px}
+.delivery b{color:#fff}
+
+/* ---------- countdown (signature) ---------- */
+.clock{background:var(--steel);color:#fff;padding:30px 0;border-top:2px solid var(--gold)}
+.clock .label{text-align:center;font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;color:var(--gold-soft);font-size:15px;margin-bottom:14px;text-transform:uppercase}
+.clock .digits{display:flex;justify-content:center;gap:10px}
+.clock .unit{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:10px;padding:12px 6px;min-width:74px;text-align:center}
+.clock .unit .n{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:34px;line-height:1;color:#fff}
+.clock .unit .u{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9fb0c2;margin-top:6px}
+.clock .note{text-align:center;color:#9fb0c2;font-size:13.5px;margin-top:16px;max-width:460px;margin-left:auto;margin-right:auto}
+
+/* ---------- generic section ---------- */
+section{padding:46px 0}
+.kicker{font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.12em;color:var(--gold);font-size:14px;text-transform:uppercase;margin-bottom:10px;text-align:center}
+.h2{font-size:clamp(27px,6.5vw,38px);font-weight:700;color:var(--ink);text-align:center;margin-bottom:12px}
+.lead{text-align:center;color:var(--muted);max-width:520px;margin:0 auto 30px;font-size:16px}
+
+/* pain list */
+.pain{background:var(--white)}
+.pain-item{display:flex;gap:14px;align-items:flex-start;background:var(--cool);border-left:4px solid var(--alert);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.pain-item .x{color:var(--alert);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;line-height:1.1}
+.pain-item p{font-size:15.5px}
+
+/* feature cards */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--white);border:1px solid var(--cool-2);border-radius:14px;padding:22px 20px;box-shadow:0 4px 14px rgba(16,32,47,.05)}
+.card .ic{width:44px;height:44px;border-radius:11px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.card h3{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:7px;text-transform:none;font-family:'Barlow Condensed',sans-serif;letter-spacing:0}
+.card p{font-size:14.5px;color:var(--muted)}
+
+/* what falls on the exam (value demo) */
+.exam{background:var(--navy);color:#fff}
+.exam .h2{color:#fff}
+.exam .lead{color:#b7c5d6}
+.blocos{display:flex;flex-direction:column;gap:10px;max-width:520px;margin:0 auto}
+.bloco{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--steel);border:1px solid var(--line);border-radius:11px;padding:15px 18px}
+.bloco .nome{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:19px;letter-spacing:.02em}
+.bloco .q{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--gold);font-size:15px;white-space:nowrap}
+.bloco.red{border-color:rgba(214,72,46,.5)}
+.bloco.red .q{color:#F0A08F}
+
+/* checklist */
+.check{background:var(--cool)}
+.check ul{list-style:none;max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:11px}
+.check li{display:flex;gap:12px;align-items:center;background:var(--white);border:1px solid var(--cool-2);border-radius:10px;padding:14px 16px;font-size:15.5px;font-weight:500}
+.check li .v{color:#1a9e5f;font-weight:700;font-size:20px}
+
+/* receive box */
+.receive{background:var(--white)}
+.rbox{background:var(--navy);color:#fff;border-radius:16px;padding:28px 24px;max-width:540px;margin:0 auto;border:1px solid var(--steel)}
+.rbox .flag{display:inline-block;background:var(--alert);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.08em;font-size:13px;padding:4px 11px;border-radius:5px;text-transform:uppercase;margin-bottom:16px}
+.rbox ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.rbox li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:#dbe4ee}
+.rbox li .v{color:var(--gold);font-weight:700}
+
+/* bonus */
+.bonus{background:var(--cool)}
+.bonus-item{display:flex;gap:16px;align-items:center;background:var(--white);border:1px solid var(--cool-2);border-radius:13px;padding:16px 18px;margin-bottom:12px}
+.bonus-item .thumb{width:58px;height:58px;flex:0 0 58px;border-radius:10px;background:linear-gradient(135deg,var(--steel),var(--navy));display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--gold)}
+.bonus-item h3{font-size:18px;font-weight:700;text-transform:none;font-family:'Barlow Condensed',sans-serif;letter-spacing:0;margin-bottom:2px}
+.bonus-item p{font-size:13.5px;color:var(--muted)}
+.bonus-item .val{margin-left:auto;text-align:right;flex:0 0 auto}
+.bonus-item .val .de{display:block;color:var(--muted);text-decoration:line-through;font-size:13px}
+.bonus-item .val .free{font-family:'Barlow Condensed',sans-serif;font-weight:700;color:#1a9e5f;font-size:19px}
+
+/* pricing */
+.pricing{background:var(--navy)}
+.pricing .h2{color:#fff}
+.plans{display:flex;flex-direction:column;gap:18px;max-width:460px;margin:0 auto}
+.plan{background:var(--white);border-radius:16px;padding:26px 24px;border:2px solid transparent;position:relative}
+.plan.best{border-color:var(--gold);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.plan .best-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.06em;font-size:13px;padding:5px 16px;border-radius:20px;text-transform:uppercase;white-space:nowrap}
+.plan h3{font-size:24px;font-weight:700;color:var(--ink);margin-bottom:14px;text-transform:none;font-family:'Barlow Condensed',sans-serif;letter-spacing:0}
+.plan ul{list-style:none;margin-bottom:20px;display:flex;flex-direction:column;gap:9px}
+.plan li{display:flex;gap:9px;font-size:14.5px;align-items:flex-start;color:var(--ink)}
+.plan li .v{color:var(--gold);font-weight:700}
+.plan li.gift .v{color:var(--alert)}
+.plan .pr{text-align:center;margin-bottom:6px}
+.plan .pr .de{color:var(--muted);text-decoration:line-through;font-size:15px}
+.plan .pr .por{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:46px;color:var(--ink);line-height:1}
+.plan .pr .por small{font-size:22px;vertical-align:top;color:var(--muted)}
+.plan .parc{text-align:center;color:var(--muted);font-size:13.5px;margin-bottom:16px}
+.plan .cta{font-size:20px}
+.plan.basic .cta{background:var(--cool-2);color:var(--ink);box-shadow:none}
+.plan.basic .cta:hover{background:#d4dbe4}
+.share{text-align:center;color:#9fb0c2;font-size:14px;margin:14px auto 0}
+
+/* guarantee */
+.guar{background:var(--white)}
+.gbox{max-width:540px;margin:0 auto;display:flex;gap:20px;align-items:center;background:var(--cool);border:1px solid var(--cool-2);border-radius:16px;padding:24px}
+.gbox .seal{flex:0 0 84px;width:84px;height:84px;border-radius:50%;border:3px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:.95;text-align:center}
+.gbox .seal .big{font-size:30px}
+.gbox .seal .sm{font-size:11px;letter-spacing:.05em}
+.gbox h3{font-size:21px;margin-bottom:6px;text-transform:none;font-family:'Barlow Condensed',sans-serif;letter-spacing:0}
+.gbox p{font-size:14.5px;color:var(--muted)}
+
+/* steps */
+.steps{background:var(--cool)}
+.step{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;max-width:520px;margin-left:auto;margin-right:auto}
+.step .n{flex:0 0 40px;width:40px;height:40px;border-radius:10px;background:var(--navy);color:var(--gold);font-family:'JetBrains Mono',monospace;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:18px}
+.step h3{font-size:18px;text-transform:none;font-family:'Barlow Condensed',sans-serif;letter-spacing:0;margin-bottom:3px}
+.step p{font-size:14.5px;color:var(--muted)}
+
+/* testimonials */
+.testi{background:var(--white)}
+.testi-grid{display:flex;flex-direction:column;gap:14px;max-width:540px;margin:0 auto}
+.testi-card{background:var(--cool);border:1px dashed var(--gold);border-radius:13px;padding:20px}
+.testi-card .stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:8px}
+.testi-card p{font-size:15px;font-style:italic;color:var(--ink);margin-bottom:10px}
+.testi-card .who{font-size:13.5px;color:var(--muted);font-weight:600}
+.testi-hint{text-align:center;color:var(--alert);font-size:12.5px;margin-top:14px;font-weight:600}
+
+/* faq */
+.faq{background:var(--cool)}
+.faq-item{background:var(--white);border:1px solid var(--cool-2);border-radius:11px;margin-bottom:10px;max-width:560px;margin-left:auto;margin-right:auto;overflow:hidden}
+.faq-item summary{cursor:pointer;list-style:none;padding:17px 20px;font-weight:600;font-size:15.5px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .plus{color:var(--gold);font-size:22px;font-family:'Barlow Condensed',sans-serif;transition:transform .2s}
+.faq-item[open] summary .plus{transform:rotate(45deg)}
+.faq-item .a{padding:0 20px 18px;color:var(--muted);font-size:14.5px}
+
+/* final CTA */
+.final{background:var(--navy);color:#fff;text-align:center}
+.final h2{font-size:clamp(26px,6.5vw,38px);color:#fff;margin-bottom:10px}
+.final .h2sub{color:#b7c5d6;max-width:460px;margin:0 auto 24px;font-size:16px}
+.final .cta{max-width:420px;margin:0 auto}
+
+/* footer */
+footer{background:#0a1420;color:#6f8296;padding:34px 0;font-size:12.5px;text-align:center;line-height:1.7}
+footer .disc{max-width:560px;margin:12px auto 0;opacity:.8}
+
+/* sticky mobile bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy);border-top:1px solid var(--steel);padding:10px 16px;display:none;align-items:center;gap:12px;box-shadow:0 -6px 20px rgba(0,0,0,.3)}
+.sticky .p{color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;line-height:1;white-space:nowrap}
+.sticky .p small{display:block;color:#9fb0c2;font-family:'Inter';font-weight:500;font-size:11px;text-decoration:line-through}
+.sticky .cta{flex:1;font-size:18px;padding:13px}
+
+@media (max-width:520px){
+  .grid{grid-template-columns:1fr}
+  .clock .unit{min-width:66px;padding:10px 4px}
+  .clock .unit .n{font-size:28px}
+  .sticky{display:flex}
+  body{padding-bottom:70px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<div class="topbar">
+  <span>⚡ Prova PMES: <b>16 DE AGOSTO</b> — faltam <b id="topDays">--</b> dias</span>
+  <span class="safe">🔒 Compra 100% segura</span>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Cartilha do Aprovado · PMES 2026 · Soldado Combatente</span>
+    <h1>Todo o edital da PMES <span class="hl">resumido, visual e colorido</span> — pra você chegar na prova sabendo o que cai.</h1>
+    <p class="sub">Enquanto os outros se afogam em centenas de páginas de edital, você abre uma cartilha com os 4 blocos da prova e as pegadinhas da banca IDECAN já marcadas. Pronta pra baixar e estudar hoje.</p>
+
+    <!-- [IMAGEM: mockup da cartilha / capa colorida] -->
+    <div class="mock">📄 [ IMAGEM DA CARTILHA AQUI — capa + páginas coloridas ]</div>
+
+    <div class="priceline">
+      <span class="de">de R$47</span>
+      <span class="por"><small>R$</small>27</span>
+      <span class="tag">acesso imediato</span>
+    </div>
+
+    <a href="#checkout" class="cta">Quero minha cartilha
+      <span class="small">Recebe na hora no e-mail e WhatsApp</span>
+    </a>
+    <p class="delivery">Pra estudar no <b>celular, tablet ou computador</b> — ou imprimir em A4.</p>
+  </div>
+</header>
+
+<!-- ================= COUNTDOWN (signature) ================= -->
+<div class="clock">
+  <p class="label">A prova não espera. Faltam:</p>
+  <div class="digits">
+    <div class="unit"><div class="n" id="cd-d">--</div><div class="u">Dias</div></div>
+    <div class="unit"><div class="n" id="cd-h">--</div><div class="u">Horas</div></div>
+    <div class="unit"><div class="n" id="cd-m">--</div><div class="u">Min</div></div>
+    <div class="unit"><div class="n" id="cd-s">--</div><div class="u">Seg</div></div>
+  </div>
+  <p class="note">Cada dia perdido tentando ler o edital inteiro é vantagem pro seu concorrente. A cartilha te coloca no ritmo hoje.</p>
+</div>
+
+<!-- ================= DOR ================= -->
+<section class="pain">
+  <div class="wrap">
+    <p class="kicker">Se você já abriu o edital, conhece isso</p>
+    <h2 class="h2">O problema não é você. É a quantidade de coisa.</h2>
+    <p class="lead">Faltando poucas semanas, o candidato médio trava por quatro motivos:</p>
+    <div class="pain-item"><span class="x">✕</span><p>São centenas de páginas entre Português, Matemática, Geografia e História — e você não sabe por onde começar.</p></div>
+    <div class="pain-item"><span class="x">✕</span><p><b>Metade da prova é Geografia e História do Espírito Santo</b>, e quase não existe material resumido disso em lugar nenhum.</p></div>
+    <div class="pain-item"><span class="x">✕</span><p>A banca IDECAN adora pegadinha: <b>uma palavra no enunciado</b> muda a resposta inteira — e derruba quem lê no automático.</p></div>
+    <div class="pain-item"><span class="x">✕</span><p>A redação sozinha elimina (precisa de 50%) — e quase ninguém treina antes da prova.</p></div>
+  </div>
+</section>
+
+<!-- ================= SOLUÇÃO ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">A solução</p>
+    <h2 class="h2">A Cartilha do Aprovado organiza tudo pra você</h2>
+    <p class="lead">Feita pra transformar o edital gigante num material visual que você entende em minutos.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">🎯</div><h3>Todo o edital, visual</h3><p>Os 4 blocos da prova resumidos em quadros e mapas coloridos. O que levaria semanas, você vê de forma direta.</p></div>
+      <div class="card"><div class="ic">⚠️</div><h3>Pegadinhas da IDECAN</h3><p>Os erros que mais derrubam candidato, destacados pra você não cair nas mesmas armadilhas.</p></div>
+      <div class="card"><div class="ic">📍</div><h3>Espírito Santo mastigado</h3><p>Geografia e História do ES — metade da prova — resumidas e organizadas num lugar só.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3>Pronta pra usar hoje</h3><p>PDF pra baixar, imprimir e estudar no celular. Sem enrolação, sem curso de 40 horas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= O QUE CAI (value demo) ================= -->
+<section class="exam">
+  <div class="wrap">
+    <p class="kicker">O que cai na prova</p>
+    <h2 class="h2">80 questões + redação. Olha como fica simples.</h2>
+    <p class="lead">É exatamente essa estrutura que a cartilha organiza pra você:</p>
+    <div class="blocos">
+      <div class="bloco"><span class="nome">Língua Portuguesa</span><span class="q">20 questões</span></div>
+      <div class="bloco"><span class="nome">Raciocínio Lógico e Matemática</span><span class="q">20 questões</span></div>
+      <div class="bloco"><span class="nome">Geografia · Geral, Brasil e ES</span><span class="q">20 questões</span></div>
+      <div class="bloco"><span class="nome">História · Brasil e ES</span><span class="q">20 questões</span></div>
+      <div class="bloco red"><span class="nome">Redação · dissertativo-argumentativa</span><span class="q">40 pontos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IDEAL PRA VOCÊ ================= -->
+<section class="check">
+  <div class="wrap">
+    <p class="kicker">Feita pra você</p>
+    <h2 class="h2">Ideal pra quem quer:</h2>
+    <ul>
+      <li><span class="v">✓</span> Parar de se afogar no edital e focar no que cai</li>
+      <li><span class="v">✓</span> Saber exatamente o que estudar nas últimas semanas</li>
+      <li><span class="v">✓</span> Não cair nas pegadinhas da banca IDECAN</li>
+      <li><span class="v">✓</span> Dominar a parte do Espírito Santo, que quase ninguém tem</li>
+      <li><span class="v">✓</span> Chegar no dia 16 de agosto com a cabeça organizada</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= O QUE RECEBE ================= -->
+<section class="receive">
+  <div class="wrap">
+    <div class="rbox">
+      <span class="flag">⚡ Acesso imediato</span>
+      <ul>
+        <li><span class="v">›</span> Cartilha do Aprovado PMES completa (PDF)</li>
+        <li><span class="v">›</span> Todo o edital resumido de forma visual e colorida</li>
+        <li><span class="v">›</span> Pegadinhas da IDECAN marcadas em cada matéria</li>
+        <li><span class="v">›</span> Pronta pra imprimir (A4) e estudar no celular</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BÔNUS ================= -->
+<section class="bonus">
+  <div class="wrap">
+    <p class="kicker">E não para por aí</p>
+    <h2 class="h2">No plano completo você ainda leva:</h2>
+    <p class="lead">4 bônus que atacam justamente onde o candidato mais perde ponto.</p>
+    <div class="bonus-item"><div class="thumb">✍️</div><div><h3>Redação Blindada PMES</h3><p>Estrutura pronta da dissertativa + os temas mais prováveis + frases-coringa.</p></div><div class="val"><span class="de">R$37</span><span class="free">GRÁTIS</span></div></div>
+    <div class="bonus-item"><div class="thumb">🗺️</div><div><h3>Turbo Capixaba</h3><p>História e Geografia do Espírito Santo em mapas mentais — metade da prova.</p></div><div class="val"><span class="de">R$37</span><span class="free">GRÁTIS</span></div></div>
+    <div class="bonus-item"><div class="thumb">📅</div><div><h3>Plano de Ataque de 30 dias</h3><p>Cronograma dia a dia da reta final pra você não perder tempo.</p></div><div class="val"><span class="de">R$27</span><span class="free">GRÁTIS</span></div></div>
+    <div class="bonus-item"><div class="thumb">📌</div><div><h3>Pôster do que mais cai</h3><p>Um mapa visual do assunto que mais aparece na prova, pra deixar na parede.</p></div><div class="val"><span class="de">R$27</span><span class="free">GRÁTIS</span></div></div>
+  </div>
+</section>
+
+<!-- ================= PREÇOS ================= -->
+<section class="pricing" id="checkout">
+  <div class="wrap">
+    <p class="kicker">Escolha sua opção</p>
+    <h2 class="h2">Comece a estudar ainda hoje</h2>
+    <div class="plans">
+
+      <div class="plan basic">
+        <h3>Plano Básico</h3>
+        <ul>
+          <li><span class="v">✓</span> Cartilha do Aprovado PMES (PDF)</li>
+          <li><span class="v">✓</span> Todo o edital resumido e visual</li>
+          <li><span class="v">✓</span> Pegadinhas da IDECAN marcadas</li>
+          <li><span class="v">✓</span> Pronta pra imprimir e usar no celular</li>
+        </ul>
+        <div class="pr"><span class="de">de R$47</span><br><span class="por"><small>R$</small>27</span></div>
+        <p class="parc">ou 3x de R$9,58 no cartão</p>
+        <!-- TROQUE href pelo link do plano básico -->
+        <a href="#checkout" class="cta">Quero só a cartilha</a>
+      </div>
+
+      <div class="plan best">
+        <span class="best-tag">⚡ Mais escolhido</span>
+        <h3>Plano Completo</h3>
+        <ul>
+          <li><span class="v">✓</span> Tudo do plano básico, e mais:</li>
+          <li class="gift"><span class="v">🎁</span> Bônus 1 · Redação Blindada PMES</li>
+          <li class="gift"><span class="v">🎁</span> Bônus 2 · Turbo Capixaba (História + Geografia ES)</li>
+          <li class="gift"><span class="v">🎁</span> Bônus 3 · Plano de Ataque de 30 dias</li>
+          <li class="gift"><span class="v">🎁</span> Bônus 4 · Pôster do que mais cai</li>
+        </ul>
+        <div class="pr"><span class="de">de R$97</span><br><span class="por"><small>R$</small>47</span></div>
+        <p class="parc">ou 5x de R$10,08 no cartão</p>
+        <!-- TROQUE href pelo link do plano completo -->
+        <a href="#checkout" class="cta">Quero o plano completo</a>
+      </div>
+
+    </div>
+    <p class="share">🔒 Pagamento seguro · Pix, cartão ou boleto</p>
+  </div>
+</section>
+
+<!-- ================= GARANTIA ================= -->
+<section class="guar">
+  <div class="wrap">
+    <div class="gbox">
+      <div class="seal"><span class="big">7</span><span class="sm">DIAS</span></div>
+      <div>
+        <h3>Garantia de 7 dias — risco zero</h3>
+        <p>Baixe o material, use na prática. Se sentir que não é pra você, é só pedir o reembolso dentro de 7 dias. Devolvemos 100%, sem burocracia e sem perguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="steps">
+  <div class="wrap">
+    <p class="kicker">Como funciona</p>
+    <h2 class="h2">Do clique ao estudo em 2 minutos</h2>
+    <div class="step"><div class="n">1</div><div><h3>Faça a compra com segurança</h3><p>Pagamento pelo site, com Pix, cartão ou boleto.</p></div></div>
+    <div class="step"><div class="n">2</div><div><h3>Receba na hora</h3><p>Assim que o pagamento confirma, o acesso é liberado no seu e-mail e WhatsApp.</p></div></div>
+    <div class="step"><div class="n">3</div><div><h3>Baixe a cartilha</h3><p>Acesse pelo celular, tablet ou computador — e imprima em A4 se quiser.</p></div></div>
+    <div class="step"><div class="n">4</div><div><h3>Estude o que cai</h3><p>Siga o material visual, foque no essencial e chegue firme no dia 16 de agosto.</p></div></div>
+  </div>
+</section>
+
+<!-- ================= DEPOIMENTOS (TROCAR POR REAIS) ================= -->
+<section class="testi">
+  <div class="wrap">
+    <p class="kicker">Quem já usou</p>
+    <h2 class="h2">O que dizem os alunos</h2>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="stars">★★★★★</div><p>"[ DEPOIMENTO REAL DE ALUNO — cole aqui um print/texto verdadeiro ]"</p><div class="who">— [Nome real, cidade]</div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p>"[ DEPOIMENTO REAL DE ALUNO ]"</p><div class="who">— [Nome real, cidade]</div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p>"[ DEPOIMENTO REAL DE ALUNO ]"</p><div class="who">— [Nome real, cidade]</div></div>
+    </div>
+    <p class="testi-hint">⚠️ Substitua por depoimentos VERDADEIROS antes de publicar. Depoimento inventado é falso testemunho e derruba o anúncio.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq">
+  <div class="wrap">
+    <p class="kicker">Dúvidas</p>
+    <h2 class="h2">Perguntas frequentes</h2>
+    <details class="faq-item"><summary>É difícil de usar? <span class="plus">+</span></summary><div class="a">Não. A cartilha é visual, direta e organizada por matéria. É feita justamente pra quem tem pouco tempo e precisa entender rápido.</div></details>
+    <details class="faq-item"><summary>Preciso já estar estudando há muito tempo? <span class="plus">+</span></summary><div class="a">Não. Serve pra quem está começando agora na reta final e pra quem já estuda e quer revisar o essencial sem se perder.</div></details>
+    <details class="faq-item"><summary>Serve mesmo faltando pouco tempo pra prova? <span class="plus">+</span></summary><div class="a">Sim. Ela foi pensada pra reta final: foco no que cai, sem enrolação, pra render ao máximo os dias que faltam até 16 de agosto.</div></details>
+    <details class="faq-item"><summary>Como vou receber? <span class="plus">+</span></summary><div class="a">Após a confirmação do pagamento, o acesso ao PDF é liberado na hora, no seu e-mail e WhatsApp. Você baixa e já começa.</div></details>
+    <details class="faq-item"><summary>E se eu não gostar? <span class="plus">+</span></summary><div class="a">Você tem garantia de 7 dias. Se achar que não é pra você, pede o reembolso e devolvemos 100%, sem burocracia.</div></details>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final">
+  <div class="wrap">
+    <p class="kicker">Última chamada</p>
+    <h2>A prova é dia 16 de agosto. O tempo tá correndo.</h2>
+    <p class="h2sub">Cada dia conta. Comece hoje com o material que separa o que cai do que não cai.</p>
+    <a href="#checkout" class="cta">Quero minha cartilha agora
+      <span class="small">Acesso imediato · garantia de 7 dias</span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    Copyright © 2026 · Cartilha do Aprovado na PMES · Todos os direitos reservados.
+    <p class="disc">Este site não é afiliado ao Facebook™, Instagram™ ou Google™. Este material é de estudo independente e não possui vínculo com a Polícia Militar do Espírito Santo, com o IDECAN ou com qualquer órgão público. Não garantimos aprovação — o resultado depende da dedicação de cada candidato.</p>
+  </div>
+</footer>
+
+<!-- ================= STICKY MOBILE CTA ================= -->
+<div class="sticky">
+  <div class="p">R$27 <small>R$47</small></div>
+  <a href="#checkout" class="cta">Quero minha cartilha</a>
+</div>
+
+<script>
+// Contador REAL até a prova: 16/08/2026, 14h (ajuste se o horário mudar)
+const alvo = new Date('2026-08-16T14:00:00-03:00').getTime();
+function tick(){
+  const agora = Date.now();
+  let dif = Math.max(0, alvo - agora);
+  const d = Math.floor(dif/86400000); dif -= d*86400000;
+  const h = Math.floor(dif/3600000);  dif -= h*3600000;
+  const m = Math.floor(dif/60000);    dif -= m*60000;
+  const s = Math.floor(dif/1000);
+  const p = n => String(n).padStart(2,'0');
+  const set = (id,v)=>{const el=document.getElementById(id); if(el) el.textContent=v;};
+  set('cd-d',p(d)); set('cd-h',p(h)); set('cd-m',p(m)); set('cd-s',p(s));
+  set('topDays', d);
+}
+tick(); setInterval(tick,1000);
+</script>
+</body>
+</html>
