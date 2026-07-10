@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cartilha do Aprovado PMES">
+  <defs>
+    <linearGradient id="bg" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16304F"/>
+      <stop offset="1" stop-color="#0E1A2B"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="18" y1="12" x2="48" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F0D47A"/>
+      <stop offset="1" stop-color="#C9A24B"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <path d="M32 8 51 16v15c0 12.4-7.5 20.6-19 25-11.5-4.4-19-12.6-19-25V16L32 8Z" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M23 39V24h9.2c4.4 0 7.3 2.4 7.3 6.2s-2.9 6.2-7.3 6.2h-3.5V39H23Zm5.7-7.1h2.9c1.3 0 2.1-.6 2.1-1.7 0-1.1-.8-1.7-2.1-1.7h-2.9v3.4Z" fill="#FFFFFF"/>
+  <path d="M39 39V24h5.7v15H39Z" fill="#FFFFFF"/>
+  <path d="M20 45h24" stroke="#6BBF45" stroke-width="4" stroke-linecap="round"/>
+  <path d="M45 18 50 23" stroke="#6BBF45" stroke-width="4" stroke-linecap="round"/>
+</svg>
